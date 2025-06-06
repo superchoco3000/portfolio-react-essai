@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: './', // C'est essentiel pour GitHub Pages. Il rend tous les chemins relatifs au sous-dossier.
+  base: '/portfolio-react-essai/', // C'est essentiel pour GitHub Pages. Il rend tous les chemins relatifs au sous-dossier.
   
   css: {
     postcss: './postcss.config.cjs', // Votre configuration pour PostCSS et Tailwind CSS

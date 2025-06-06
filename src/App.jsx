@@ -95,10 +95,10 @@ function App() {
         {isMenuOpen && (
           <div className="md:hidden fixed top-16 left-0 w-full bg-gray-800 bg-opacity-90 shadow-xl z-40 py-4 transform transition-transform duration-300 ease-in-out">
             <ul className="flex flex-col items-center space-y-4 text-white font-medium">
-              <li><a href="#about" onClick={() => scrollToSection('about')} className="block py-2 hover:text-blue-300 transition-colors w-full text-center">A Propósito</a></li>
-              <li><a href="#skills" onClick={() => scrollToSection('skills')} className="block py-2 hover:text-green-300 transition-colors w-full text-center">Habilidades</a></li>
-              <li><a href="#projects" onClick={() => scrollToSection('projects')} className="block py-2 hover:text-red-300 transition-colors w-full text-center">Proyectos</a></li>
-              <li><a href="#contact" onClick={() => scrollToSection('contact')} className="block py-2 hover:text-teal-300 transition-colors w-full text-center">Contacto</a></li>
+              <li><a href="#about" onClick={() => scrollToSection('about')} className="block py-2 hover:text-blue-300 transition-colors w-full text-center">À Propos</a></li>
+              <li><a href="#skills" onClick={() => scrollToSection('skills')} className="block py-2 hover:text-green-300 transition-colors w-full text-center">Compétences</a></li>
+              <li><a href="#projects" onClick={() => scrollToSection('projects')} className="block py-2 hover:text-red-300 transition-colors w-full text-center">Projets</a></li>
+              <li><a href="#contact" onClick={() => scrollToSection('contact')} className="block py-2 hover:text-teal-300 transition-colors w-full text-center">Contact</a></li>
             </ul>
           </div>
         )}
