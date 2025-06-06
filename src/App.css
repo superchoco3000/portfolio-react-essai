@@ -1,0 +1,130 @@
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- Directives Tailwind CSS --- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Styles Généraux (hors thèmes) --- */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce pour le changement de thème */
+    overflow-x: hidden; /* Empêche le défilement horizontal indésirable */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Styles pour le mode sombre global (Fallback/Par défaut si React n'applique pas les classes) */
+.dark body {
+    background-color: #0d1117; /* Fond très sombre */
+    color: #e2e8f0; /* Texte clair */
+}
+
+/* Transition de l'image de fond (gérée par React) */
+.transition-background-image {
+    transition: background-image 0.7s ease-in-out;
+}
+
+/* Animations de transition de thème (pour la luminosité de l'écran global) */
+.dim-screen {
+    filter: brightness(0.7); /* Assombrit légèrement */
+    transition: filter 0.5s ease-in-out;
+}
+
+.brighten-screen {
+    filter: brightness(1); /* Éclaircit légèrement */
+    transition: filter 0.5s ease-in-out;
+}
+
+/* Cacher la scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+  scroll-behavior: smooth; /* Pour une navigation fluide avec les ancres */
+}
+
+section {
+  scroll-snap-align: start;
+  min-height: 100vh; /* S'assurer que chaque section prend au moins la hauteur de la vue */
+}
+
+/* Styles pour les champs de formulaire en mode sombre */
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="password"],
+.dark textarea {
+    background-color: #333; /* Fond sombre */
+    color: #e2e8f0; /* Texte clair */
+    border-color: #555; /* Bordure claire */
+}
+
+.dark input[type="text"]:focus,
+.dark input[type="email"]:focus,
+.dark input[type="password"]:focus,
+.dark textarea:focus {
+    border-color: #6366f1; /* Bordure violette à l'activation */
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3); /* Ombre violette */
+}
+
+
+/* --- Styles du titre "Mes Compétences" --- */
+.section-heading {
+    font-size: 2.5rem; /* Grande taille pour le titre */
+    font-weight: 800; /* Très gras */
+    color: #FFFFFF; /* Couleur de texte par défaut, sera recouverte par le dégradé */
+    text-align: center;
+    margin-bottom: 2rem; /* Espace sous le titre */
+    /* Dégradé pour le texte pour un effet premium */
+    background: linear-gradient(to right, #3B82F6, #93C5FD); /* Dégradé de bleu vif */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block; /* Important pour que le dégradé s'applique au texte */
+    padding-bottom: 0.5rem; /* Petit padding pour l'underline visuel si désiré */
+    position: relative;
+}
+
+/* Pseudo-élément pour la ligne décorative sous le titre */
+.section-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px; /* Largeur de la ligne */
+    height: 4px; /* Épaisseur de la ligne */
+    background: linear-gradient(to right, #3B82F6, #93C5FD); /* Dégradé de couleur */
+    border-radius: 2px;
+}
+
+/* AUCUN STYLE SPECIFIQUE pour les éléments de technologie ici.
+   Le dimensionnement et le positionnement sont gérés directement dans le JSX
+   avec les classes Tailwind. */
+
+/* --- Media Queries pour le Responsive Design --- */
+@media screen and (max-width: 768px) {
+    .section-heading {
+        font-size: 2rem;
+    }
+}
