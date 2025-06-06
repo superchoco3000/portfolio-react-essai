@@ -1,13 +1,12 @@
-// src/App.jsx
+
 import React, { useEffect, useState } from 'react';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import SkillsSection from './components/SkillsSection';
 import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
+import './App.css'; // Assurez-vous d'importer votre fichier CSS pour les styles globaux
 
-// Définissez la base URL ici pour faciliter la gestion des ressources statiques
-export const BASE_URL = '/portfolio-react-essai'; // Exportez-le ici pour les autres composants
 
 function App() {
   const [theme, setTheme] = useState('dark'); // Commencez en mode sombre
@@ -62,7 +61,7 @@ function App() {
       className={`min-h-screen font-sans ${theme === 'dark' ? 'dark' : ''}
                    bg-cover bg-center bg-fixed transition-background-image`}
       style={{
-        backgroundImage: `url('${BASE_URL}/${theme === 'dark' ? 'playground3.jpg' : 'playground2.jpg'}')`,
+        backgroundImage: `url('/${theme === 'dark' ? 'playground4.jpg' : 'playground2.jpg'}')`,
       }}
     >
       {/* Overlay pour assombrir légèrement le fond */}

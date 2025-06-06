@@ -1,4 +1,3 @@
-// src/components/AboutSection.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -14,9 +13,7 @@ function AboutSection() {
     visible: { opacity: 1, y: 0 },
   };
 
-  // Définissez la BASE_URL ici pour l'image
-  const BASE_URL = '/portfolio-react-essai';
-  const profileImageUrl = `${BASE_URL}/moi.jpg`; // Chemin de votre image
+
 
   return (
     <section id="about" className="py-16 px-4 bg-gray-800 text-white flex justify-center items-center snap-start">
@@ -32,7 +29,7 @@ function AboutSection() {
           className="md:w-1/3 flex justify-center mb-8 md:mb-0 md:mr-8" // Marges pour l'espacement
         >
           <img
-            src={profileImageUrl}
+            src="/moi.jpg"
             alt="Lucas Casanove Portrait"
             className="w-64 h-64 md:w-72 md:h-72 rounded-full object-cover shadow-xl border-4 border-blue-500"
             onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/288x288/cccccc/000000?text=Lucas'; }} // Image de secours

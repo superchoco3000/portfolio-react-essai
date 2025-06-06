@@ -3,7 +3,7 @@
 
     export default defineConfig({
       plugins: [react()],
-      base: '/portfolio-react-essai/', // REMPLACE PAR LE NOM DE TON DÉPÔT GITHUB
+      base: './', 
       css: {
         postcss: './postcss.config.cjs',
       },

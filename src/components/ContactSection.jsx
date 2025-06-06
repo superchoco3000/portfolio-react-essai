@@ -1,13 +1,17 @@
 // src/components/ContactSection.jsx
 import React from 'react';
-import { BASE_URL } from '../App'; // Importez BASE_URL depuis App.jsx
 import PropTypes from 'prop-types'; // N'oubliez pas d'importer PropTypes si vous l'utilisez
 
 function ContactSection({ id }) { // Assurez-vous que le prop 'id' est bien reçu
   return (
-    // Section contact avec padding et couleur de fond sombre
-    <section id={id} className="py-16 px-4 bg-gray-800 text-white flex justify-center items-center snap-start">
-      <div className="max-w-4xl mx-auto text-center bg-gray-900 bg-opacity-70 p-8 md:p-12 rounded-xl shadow-2xl backdrop-blur-sm">
+    // La section elle-même n'aura plus de fond (bg-gray-800)
+    // Elle laissera transparaître le fond du <body>
+    <section id={id} className="py-16 px-4 text-white flex justify-center items-center snap-start">
+      {/*
+        Le conteneur principal du contenu (avec les boutons et le formulaire)
+        sera le seul élément avec un fond semi-transparent et un flou.
+      */}
+      <div className="max-w-4xl mx-auto text-center bg-white/5 dark:bg-gray-800/5 backdrop-blur-md p-8 md:p-12 rounded-xl shadow-2xl border border-white/10 dark:border-gray-700/20">
 
         {/* Titre "Contactez-moi" */}
         <h2 className="text-5xl font-extrabold text-gray-800 dark:text-white mb-12 relative pb-4">
@@ -25,12 +29,12 @@ function ContactSection({ id }) { // Assurez-vous que le prop 'id' est bien reç
           {/* Bouton/Lien Téléphone */}
           <a
             href="tel:0768657818" // Lien pour appeler sur mobile
-            className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg shadow-md
-                       hover:shadow-xl hover:bg-gray-700 transition-all duration-300 cursor-pointer"
+            className="flex items-center space-x-4 bg-gray-800/50 p-4 rounded-lg shadow-md
+                       hover:shadow-xl hover:bg-gray-700/50 transition-all duration-300 cursor-pointer border border-white/10 dark:border-gray-700/20"
             aria-label="Appeler le 07 68 65 78 18"
           >
             <img
-              src={`${BASE_URL}/media.png`} // Chemin vers l'image du téléphone dans 'public/'
+              src={`/media.png`} // Chemin vers l'image du téléphone dans 'public/'
               alt="Icône Téléphone"
               className="w-10 h-10 object-contain"
               onError={(e) => {
@@ -45,12 +49,12 @@ function ContactSection({ id }) { // Assurez-vous que le prop 'id' est bien reç
           {/* Bouton/Lien E-mail */}
           <a
             href="mailto:lucascasanove@yahoo.fr" // Lien pour envoyer un e-mail
-            className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg shadow-md
-                       hover:shadow-xl hover:bg-gray-700 transition-all duration-300 cursor-pointer"
+            className="flex items-center space-x-4 bg-gray-800/50 p-4 rounded-lg shadow-md
+                       hover:shadow-xl hover:bg-gray-700/50 transition-all duration-300 cursor-pointer border border-white/10 dark:border-gray-700/20"
             aria-label="Envoyer un e-mail à lucascasanove@yahoo.fr"
           >
             <img
-              src={`${BASE_URL}/mail.png`} // Chemin vers l'image de l'e-mail dans 'public/'
+              src={`/mail.png`} // Chemin vers l'image de l'e-mail dans 'public/'
               alt="Icône E-mail"
               className="w-10 h-10 object-contain"
               onError={(e) => {
@@ -63,8 +67,8 @@ function ContactSection({ id }) { // Assurez-vous que le prop 'id' est bien reç
           </a>
         </div>
 
-        {/* Formulaire de contact (reste le même) */}
-        <form className="w-full max-w-lg mx-auto bg-gray-800 p-8 rounded-xl shadow-lg">
+        {/* Formulaire de contact */}
+        <form className="w-full max-w-lg mx-auto bg-gray-800/50 p-8 rounded-xl shadow-lg border border-white/10 dark:border-gray-700/20">
           <div className="mb-6">
             <label htmlFor="name" className="block text-gray-300 text-sm font-bold mb-2 text-left">
               Nom
@@ -73,7 +77,8 @@ function ContactSection({ id }) { // Assurez-vous que le prop 'id' est bien reç
               type="text"
               id="name"
               name="name"
-              className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-700 text-white border-gray-600"
+              className="shadow appearance-none border rounded w-full py-3 px-4 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+                         bg-white/10 dark:bg-gray-700/20 text-gray-900 dark:text-white border-gray-600"
               placeholder="Votre nom"
             />
           </div>
@@ -85,7 +90,8 @@ function ContactSection({ id }) { // Assurez-vous que le prop 'id' est bien reç
               type="email"
               id="email"
               name="email"
-              className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-700 text-white border-gray-600"
+              className="shadow appearance-none border rounded w-full py-3 px-4 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+                         bg-white/10 dark:bg-gray-700/20 text-gray-900 dark:text-white border-gray-600"
               placeholder="Votre email"
             />
           </div>
@@ -97,7 +103,8 @@ function ContactSection({ id }) { // Assurez-vous que le prop 'id' est bien reç
               id="message"
               name="message"
               rows="6"
-              className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-700 text-white border-gray-600"
+              className="shadow appearance-none border rounded w-full py-3 px-4 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+                         bg-white/10 dark:bg-gray-700/20 text-gray-900 dark:text-white border-gray-600"
               placeholder="Votre message..."
             ></textarea>
           </div>

@@ -1,11 +1,9 @@
-// src/components/ProjectsSection.jsx
+
 import React from 'react';
 import ProjectCard from './ProjectCard'; // Import du composant ProjectCard
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-// Définition de la base URL pour les images de projet
-const BASE_URL = '/portfolio-react-essai';
 
 // Données de projets (vous pouvez ajouter ou modifier ces données)
 const projects = [
@@ -13,7 +11,7 @@ const projects = [
     id: 1,
     title: "Projet Portfolio Personnel",
     description: "Développement d'un site web portfolio réactif en utilisant React et Tailwind CSS pour présenter mes compétences et mes réalisations. Ce projet est celui sur lequel nous travaillons actuellement !",
-    imageUrl: `${BASE_URL}/portfoliohaha.gif`,
+    imageUrl: `/portfoliohaha.gif`,
     demoLink: "#home", // Lien vers la page d'accueil du portfolio
     githubLink: null, // À remplir plus tard, je vous le rappellerai !
     explanation: "Votre portfolio actuel, construit avec React et Tailwind CSS.",
@@ -22,7 +20,7 @@ const projects = [
     id: 2,
     title: "Application de Gestion de Tâches",
     description: "Une application web interactive pour gérer les tâches quotidiennes, avec des fonctionnalités d'ajout, de suppression et de marquage comme terminées. Réalisé avec JavaScript vanilla, HTML et CSS.",
-    imageUrl: `${BASE_URL}/liste.gif`,
+    imageUrl: `/liste.gif`,
     demoLink: "https://superchoco3000.github.io/lista-tareas-ultimate/",
     githubLink: "https://github.com/superchoco3000/lista-tareas-ultimate",
     explanation: "Organisez vos tâches quotidiennes facilement avec cette application.",
@@ -31,7 +29,7 @@ const projects = [
     id: 3,
     title: "Jeu Casse-Brique en JavaScript",
     description: "Conception et implémentation d'un mini-jeu basé sur le navigateur, démontrant les concepts de logique de jeu et d'interaction utilisateur en JavaScript pur. Un classique du jeu vidéo.",
-    imageUrl: `${BASE_URL}/gameboy.gif`,
+    imageUrl: `/gameboy.gif`,
     demoLink: "https://superchoco3000.github.io/mini-jeu-pong/",
     githubLink: "https://github.com/superchoco3000/mini-jeu-pong",
     explanation: "Un jeu d'arcade classique recréé en JavaScript.",
@@ -40,7 +38,7 @@ const projects = [
     id: 4,
     title: "Site E-commerce Maquette",
     description: "Création d'une maquette de site e-commerce avec une mise en page responsive, une navigation par catégorie et une page produit détaillée. Ce projet utilise PHP pour la logique serveur et MySQL pour la base de données.",
-    imageUrl: `${BASE_URL}/jordan.gif`, 
+    imageUrl: `/jordan.gif`, 
     githubLink: "https://github.com/superchoco3000/database",
     isServerProject: true, // Indique que c'est un projet côté serveur
     explanation: "Site e-commerce avec backend PHP/MySQL.",
@@ -50,7 +48,7 @@ const projects = [
     title: "Calculatrice Web",
     description: "Une calculatrice fonctionnelle implémentée en JavaScript, HTML et CSS. Elle gère les opérations arithmétiques de base et offre une interface utilisateur intuitive et réactive.",
     // Utiliser un placeholder si vous n'avez pas de GIF/image spécifique pour la calculatrice
-    imageUrl: `${BASE_URL}/calculator.gif`,
+    imageUrl: `/calculator.gif`,
     demoLink: "https://superchoco3000.github.io/Mini-calcul-web/", 
     githubLink: "https://github.com/superchoco3000/Mini-calcul-web", // Remplacez par le lien réel
     explanation: "Effectuez des opérations arithmétiques simples dans le navigateur.",
@@ -60,7 +58,7 @@ const projects = [
     title: "Projet d'Analyse de Données Python",
     description: "Un script Python développé pour l'analyse et la visualisation de données complexes. Ce projet illustre l'utilisation de bibliothèques populaires comme Pandas et Matplotlib pour le traitement, la manipulation et la représentation graphique de l'information.",
     // Utiliser un placeholder si vous n'avez pas de GIF/image spécifique pour le projet Python
-    imageUrl: `${BASE_URL}/python.gif`,
+    imageUrl: `/python.gif`,
     githubLink: "https://github.com/superchoco3000/Analyseur-de-Texte-Python", 
     isCodeProject: true, // Indique que c'est un projet de code pur
     explanation: "Explorez et visualisez des données avec Python.",
@@ -126,7 +124,7 @@ const ProjectsSection = () => {
         transition={{ duration: 0.6, delay: 0.5 }}
         className="mt-12 text-lg text-gray-700 dark:text-gray-300"
       >
-        Vous pouvez retrouver plus de mes travaux sur mon profil GitHub.
+        Plus sur mon profil GitHub.
       </motion.p>
       <motion.a
         initial="hidden"
